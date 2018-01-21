@@ -1,0 +1,97 @@
+{
+  "name": "linter-htmllint",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A plugin for Atom Linter providing an interface to htmllint.",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ericcornelissen/linter-htmllint"
+  },
+  "engines": {
+    "atom": ">=1.4.0 <2.0.0"
+  },
+  "configSchema": {
+    "enabledScopes": {
+      "description": "List of scopes to run htmllint on, run `Editor: Log Cursor Scope` to determine the scopes for a file.",
+      "type": "array",
+      "default": [
+        "text.html.angular",
+        "text.html.basic",
+        "text.html.gohtml",
+        "text.html.jsp",
+        "text.html.mustache"
+      ],
+      "items": {
+        "type": "string"
+      }
+    },
+    "disableWhenNoHtmhintConfig": {
+      "title": "Disable when no htmllint config is found",
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "scripts": {
+    "test": "apm test",
+    "lint": "eslint ."
+  },
+  "keywords": [
+    "html",
+    "lint",
+    "htmllint"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ericcornelissen/linter-htmllint/issues"
+  },
+  "homepage": "https://github.com/ericcornelissen/linter-htmllint#readme",
+  "dependencies": {
+    "atom-linter": "^10.0.0",
+    "atom-package-deps": "^4.6.0",
+    "htmllint": "^0.7.0",
+    "strip-json-comments": "^2.0.1",
+    "tiny-promisify": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^4.6.0",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jasmine-fix": "^1.3.1"
+  },
+  "eslintConfig": {
+    "rules": {
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "global-require": "off",
+      "import/no-unresolved": [
+        "error",
+        {
+          "ignore": [
+            "atom"
+          ]
+        }
+      ]
+    },
+    "extends": "airbnb-base",
+    "globals": {
+      "atom": true
+    },
+    "env": {
+      "browser": true,
+      "node": true
+    }
+  },
+  "package-deps": [
+    "linter"
+  ],
+  "providedServices": {
+    "linter": {
+      "versions": {
+        "1.0.0": "provideLinter"
+      }
+    }
+  }
+}
