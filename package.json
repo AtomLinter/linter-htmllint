@@ -26,7 +26,7 @@
         "type": "string"
       }
     },
-    "disableWhenNoHtmhintConfig": {
+    "disableWhenNoHtmllintConfig": {
       "title": "Disable when no htmllint config is found",
       "type": "boolean",
       "default": true
