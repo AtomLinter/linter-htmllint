@@ -1,16 +1,35 @@
 ### Project specific config ###
-language: generic
+language: node_js
+node_js: lts/*
+os: linux
 
-matrix:
+env:
+  matrix:
+    - ATOM_CHANNEL=stable
+    - ATOM_CHANNEL=beta
+      
+script:
+  - commitlint-travis
+
+stages:
+  - test
+  - name: release
+    if: (NOT type = pull_request) AND branch = master
+
+jobs:
   include:
-    - os: linux
-      env: ATOM_CHANNEL=stable
-
-    - os: linux
-      env: ATOM_CHANNEL=beta
+    - stage: release
+      node_js: lts/*
+      script:
+        - export PATH=${PATH}:${HOME}/atom/usr/bin/
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
 
 ### Generic setup follows ###
-script:
+install:
   - curl -s -O https://raw.githubusercontent.com/atom/ci/master/build-package.sh
   - chmod u+x build-package.sh
   - ./build-package.sh
@@ -38,15 +57,3 @@ addons:
     - fakeroot
     - git
     - libsecret-1-dev
-
-node_js: lts/*
-
-after_success:
-  # Add apm to the PATH
-  - export PATH=${PATH}:${HOME}/atom/usr/bin/
-
-deploy:
-  provider: script
-  skip_cleanup: true
-  script:
-    - npx semantic-release
