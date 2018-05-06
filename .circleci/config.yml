@@ -20,15 +20,6 @@ defaults: &defaults
         name: APM version
         command: ${APM_SCRIPT_PATH} --version
     - run:
-        name: Node.js Version
-        command: node --version
-    - run:
-        name: NPM Version
-        command: npm --version
-    - run:
-        name: Install any remaining dependencies
-        command: npm install
-    - run:
         name: Cleaning package
         command: ${APM_SCRIPT_PATH} clean
     - run:
