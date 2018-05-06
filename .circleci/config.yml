@@ -32,7 +32,7 @@ defaults: &defaults
           fi;
     - run:
         name: Package specs
-        command: ${ATOM_SCRIPT_PATH} --test spec
+        command: ${APM_SCRIPT_PATH} test
     # Cache node_modules
     - save_cache:
         paths:
