@@ -13,6 +13,8 @@ defaults: &defaults
     - run:
         name: Create VFB for Atom to run in
         command: /usr/local/bin/xvfb_start
+    - run: sudo apt update
+    - run: sudo apt install npm -y --no-install-suggests --no-install-recommends
     - run:
         name: Atom version
         command: ${ATOM_SCRIPT_PATH} --version
@@ -20,16 +22,22 @@ defaults: &defaults
         name: APM version
         command: ${APM_SCRIPT_PATH} --version
     - run:
+        name: NPM version
+        command: npm --version
+    - run:
         name: Cleaning package
         command: ${APM_SCRIPT_PATH} clean
     - run:
-        name: Package dependencies
+        name: APM dependencies
         command: |
           if [ -n "${APM_TEST_PACKAGES}" ]; then
             for pack in ${APM_TEST_PACKAGES}; do
             ${APM_SCRIPT_PATH} install "${pack}"
             done
           fi;
+    - run:
+        name: NPM dependencies
+        command: npm install
     - run:
         name: Package specs
         command: ${ATOM_SCRIPT_PATH} --test spec
