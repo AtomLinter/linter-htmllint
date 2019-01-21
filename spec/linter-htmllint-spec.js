@@ -21,10 +21,10 @@ describe('The htmllint provider for Linter', () => {
     const messages = await lint(editor);
 
     expect(messages.length).toEqual(1);
-    expect(messages[0].type).toBe('error');
-    expect(messages[0].text).toBe('<!DOCTYPE> should be the first element seen');
-    expect(messages[0].filePath).toBe(badFile);
-    expect(messages[0].range).toEqual([[0, 0], [0, 5]]);
+    expect(messages[0].severity).toBe('error');
+    expect(messages[0].excerpt).toBe('<!DOCTYPE> should be the first element seen');
+    expect(messages[0].location.file).toBe(badFile);
+    expect(messages[0].location.position).toEqual([[0, 0], [0, 5]]);
   });
 
   it('finds nothing wrong with a valid file (good.html)', async () => {
