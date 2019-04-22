@@ -1,3 +1,10 @@
+## [1.1.3](https://github.com/AtomLinter/linter-htmllint/compare/v1.1.2...v1.1.3) (2019-04-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency htmllint to v0.8.0 ([7794905](https://github.com/AtomLinter/linter-htmllint/commit/7794905))
+
 ## [1.1.2](https://github.com/AtomLinter/linter-htmllint/compare/v1.1.1...v1.1.2) (2019-04-21)
 
 
