@@ -1,3 +1,10 @@
+## [1.1.4](https://github.com/AtomLinter/linter-htmllint/compare/v1.1.3...v1.1.4) (2019-04-30)
+
+
+### Bug Fixes
+
+* **deps:** update dependency strip-json-comments to v3 ([b7c6cbb](https://github.com/AtomLinter/linter-htmllint/commit/b7c6cbb))
+
 ## [1.1.3](https://github.com/AtomLinter/linter-htmllint/compare/v1.1.2...v1.1.3) (2019-04-22)
 
 
