@@ -1,3 +1,10 @@
+## [1.1.9](https://github.com/AtomLinter/linter-htmllint/compare/v1.1.8...v1.1.9) (2020-08-17)
+
+
+### Bug Fixes
+
+* **deps:** update dependency atom-package-deps to v7 ([dfb2f6f](https://github.com/AtomLinter/linter-htmllint/commit/dfb2f6fcc92f86ee2c9eeb451055341f70543383))
+
 ## [1.1.8](https://github.com/AtomLinter/linter-htmllint/compare/v1.1.7...v1.1.8) (2020-07-13)
 
 
