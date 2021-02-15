@@ -1,6 +1,6 @@
 {
   "name": "linter-htmllint",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "private": true,
   "description": "A plugin for Atom Linter providing an interface to htmllint.",
   "main": "lib/index.js",
